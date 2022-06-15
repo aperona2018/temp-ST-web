@@ -1,0 +1,35 @@
+{% extends 'MisPalabras/schema.html' %}
+
+<!DOCTYPE html>
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Indice - MisPalabras</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+
+    {%  block barraOpciones %}
+        <div class="cajaOpts">
+            <h2 style="color: blue">Opciones:</h2> <br>
+            <a href='/MisPalabras/ayuda'><p>~ Ayuda </p> </a> <br>
+            {%  if request.user.is_authenticated %}
+                <a href='/MisPalabras/MiPagina'><p>~ Mi página </p> </a> <br>
+            {%  endif %}
+            <p>~ XML </p> <br>
+            <p>~ JSON </p>
+        </div>
+
+    {%  endblock %}
+
+    {%  block contenido %}
+
+    {%  endblock %}
+
+</body>
+</html>

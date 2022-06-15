@@ -1,0 +1,82 @@
+
+
+.banner{
+    color: white;
+    position: relative;
+}
+
+.textoBanner{
+    position: absolute;
+    top: 10px;
+    left: 750px;
+    color: black;
+    font-size: 40px;
+}
+
+.titulo{
+    color: white;
+    font-family: 'Lobster';
+    padding-left: 750px;
+    font-size: 40px;
+}
+
+.cajaAutenticacion{
+    border-radius: 20px;
+    border: 5px solid saddlebrown;
+    background-color: white;
+    width: 350px;
+    height: 200px;
+    margin: 15px;
+}
+
+.cajaOpts{
+    border-radius: 20px;
+    border: 5px solid saddlebrown;
+    background-color: white;
+    width: 350px;
+    height: auto;
+    margin: 15px;
+}
+
+.cajaPals{
+    border-radius: 20px;
+    border: 5px solid saddlebrown;
+    background-color: white;
+    width: 350px;
+    height: auto;
+    margin: 15px;
+}
+
+.cajaForm{
+    border-radius: 20px;
+    border: 5px solid saddlebrown;
+    background-color: white;
+    width: 350px;
+    height: 400px;
+    margin: 15px;
+
+}
+
+.def{
+    position: relative;
+    float: right;
+    border-radius: 20px;
+    border: 5px solid saddlebrown;
+    background-color: white;
+    margin: 10px;
+    text-align: justify-all;
+}
+
+h1{
+    font-family: Arial;
+    font-size: medium;
+}
+
+h2{
+    font-family: Calibri;
+    font-size: medium;
+}
+
+body{
+    background-color: burlywood;
+}

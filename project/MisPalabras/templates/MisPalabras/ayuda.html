@@ -1,0 +1,33 @@
+{% extends 'MisPalabras/schema.html' %}
+
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block titulo %}
+        <div class="titulo">
+            Página de ayuda
+        </div>
+    {%  endblock %}
+
+    {% block barraOpciones %}
+
+        <div class="cajaOpts">
+            <h2 style="color: blue">Opciones:</h2> <br>
+            <a href='/MisPalabras/'><p>~ Inicio </p> </a> <br>
+            {%  if request.user.is_authenticated %}
+                <a href='/MisPalabras/MiPagina'><p>~ Mi página </p> </a> <br>
+            {%  endif %}
+            <p>~ XML </p> <br>
+            <p>~ JSON </p>
+        </div>
+
+    {%  endblock %}
+</body>
+</html>

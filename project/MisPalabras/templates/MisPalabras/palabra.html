@@ -1,0 +1,77 @@
+{% extends 'MisPalabras/schema.html' %}
+
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ palabra }} - MisPalabras</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+</head>
+<body>
+    {% block titulo %}
+        <div class="titulo">
+            {{ palabra }}
+        </div>
+    {%  endblock %}
+
+    {%  block contenido %}
+        <br>
+        <br>
+        <div class="def">
+            <p style="color:blue;text-align: center">Definicion:</p>{{ definicion }}
+            {%  if añadida %}
+                <p style="color:blue;text-align: center">Votos -> {{ votos }}</p>
+            {% endif %}
+        </div>
+        <br>
+        <br>
+
+        {%  if añadida %}
+            Palabra añadida.
+            {%  if request.user.is_authenticated %}
+                <form method="POST">
+                        {%  csrf_token %}
+                        Palabra: <input type="text" name="palabra" value="{{ palabra }}"> <br>
+                        <input type="submit" name="action" value="votar">
+                </form>
+            {% endif %}
+        {%  else %}
+            {%  if request.user.is_authenticated %}
+                <form method="POST">
+                    {%  csrf_token %}
+                    Edita y añade la palabra: <br>
+                    Palabra: <input type="text" name="palabra" value="{{ palabra }}"> <br>
+                    Definición: <input type="text" name="palabra" value="{{ definicion }}"> <br>
+                    <input type="submit" name="action" value="añadir">
+                </form>
+
+            {% else %}
+                Necesitas loguearte para añadir esta palabra.
+            {%  endif %}
+        {% endif %}
+
+
+
+    {% endblock %}
+
+    {% block barraOpciones %}
+
+        <div class="cajaOpts">
+            <h2 style="color: blue">Opciones:</h2> <br>
+            <a href='/MisPalabras/'><p>~ Inicio </p> </a> <br>
+            <a href='/MisPalabras/ayuda'><p>~ Ayuda </p> </a> <br>
+            {%  if request.user.is_authenticated %}
+                <a href='/MisPalabras/MiPagina'><p>~ Mi página </p> </a> <br>
+            {%  endif %}
+            <p>~ XML </p> <br>
+            <p>~ JSON </p>
+        </div>
+
+    {%  endblock %}
+
+</body>
+</html>

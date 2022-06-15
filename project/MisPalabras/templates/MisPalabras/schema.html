@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <title>MisPalabras</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+
+    {% block banner %}
+
+        <div class="banner">
+            {% load static %}
+            <img src="{% static 'imagenes/img.png' %}" width="1850" height="300" alt="">
+            <div class="textoBanner">MisPalabras</div>
+        </div>
+
+    {% endblock %}
+
+
+    {% block titulo %}
+
+        <div class="titulo">
+            Indice
+        </div>
+
+    {%  endblock %}
+
+
+    {%  block contenido %}
+
+    {%  endblock %}
+
+
+    {%  block formularioEntrada %}
+
+        {%  if request.user.is_authenticated %}
+            <div class="cajaAutenticacion">
+                <br>
+                Logeado como <h1>{{ user }}</h1>
+                <div class="text-end">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ username }}
+                        <input type="submit" name="action" value="Logout">
+                    </form>
+                </div>
+            </div>
+        {%  else %}
+            <div class="cajaAutenticacion">
+                <h2>Loguéate:</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <p>Usuario: <input type="text" name="usuario"></p>
+                    <p>Contraseña: <input type="text" name="contraseña"></p>
+                    <input type="submit" name="action" value="Login">
+                </form>
+            </div>
+        {%  endif %}
+
+    {%  endblock %}
+
+
+    {% block barraOpciones %}
+
+    {%  endblock %}
+
+
+    {%  block listadoPalabras %}
+
+        <div class="cajaPals">
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <br>
+                Busca una palabra:
+                <input type="text" name="palabra">
+                <input type="submit" name="action" value="Buscar palabra">
+            </form>
+
+            <br>
+
+            <h2 style="color: blue">Palabras + votadas:</h2>
+
+            {%  if num_palabras == 0 %}
+                <p style="color: red">No hay palabras...</p>
+            {%  endif %}
+
+            {%  for palabra in lista_votadas %}
+                <a href='/MisPalabras/{{ palabra.nombrePalabra }}'><p style="font-size: medium">~ {{ palabra.nombrePalabra }} --> {{ palabra.votos }} votos</p></a><br>
+            {%  endfor %}
+
+        </div>
+
+    {%  endblock %}
+
+
+
+    {%  block piePagina %}
+
+        <p style="color:white ; font-size:30px ; padding-left: 450px">Esta aplicación tiene información sobre {{ num_palabras }} palabras (ejemplo: {{ palabraRandom.nombrePalabra }}) </p>
+
+    {%  endblock %}
+
+</body>
+</html>
