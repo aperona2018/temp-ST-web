@@ -34,6 +34,13 @@
         {%  for palabra in palabras_añadidas %}
             {{  palabra.nombrePalabra }} --> {{ palabra.votos }} votos <br>
         {% endfor %}
+        <br>
+
+        Comentarios puestos por {{ user }}: <br>
+        {% for comentario in comentarios_puestos %}
+            {{ comentario.fecha }} --> {{ comentario.comentario }} <br>
+        {%  endfor %}
+
     {% endblock %}
 
 </body>

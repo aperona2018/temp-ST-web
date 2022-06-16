@@ -67,6 +67,16 @@
     text-align: justify-all;
 }
 
+.cajaIndex{
+    position: relative;
+    border-radius: 20px;
+    border: 5px solid saddlebrown;
+    background-color: white;
+    margin: 10px;
+    height: auto;
+    width: auto;
+}
+
 h1{
     font-family: Arial;
     font-size: medium;

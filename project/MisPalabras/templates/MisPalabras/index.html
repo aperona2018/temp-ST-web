@@ -28,7 +28,15 @@
     {%  endblock %}
 
     {%  block contenido %}
-
+        {% for lista in lista_index%}
+            <div class="cajaIndex">
+                {% for palabra in lista %}
+                    <p>{{ palabra.nombrePalabra }} ({{ palabra.votos }} votos) --> {{ palabra.definicion }}</p>
+                {% endfor %}
+            </div>
+            <br>
+            <br>
+        {% endfor %}
     {%  endblock %}
 
 </body>

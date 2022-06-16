@@ -14,7 +14,11 @@
 <body>
     {% block titulo %}
         <div class="titulo">
-            {{ palabra }}
+            {%  if añadida %}
+                <b>{{ palabra }}</b> ({{ votos }} votos)
+            {% else %}
+                <b>{{ palabra }}</b>
+            {% endif %}
         </div>
     {%  endblock %}
 
@@ -23,9 +27,6 @@
         <br>
         <div class="def">
             <p style="color:blue;text-align: center">Definicion:</p>{{ definicion }}
-            {%  if añadida %}
-                <p style="color:blue;text-align: center">Votos -> {{ votos }}</p>
-            {% endif %}
         </div>
         <br>
         <br>
@@ -53,6 +54,25 @@
                 Necesitas loguearte para añadir esta palabra.
             {%  endif %}
         {% endif %}
+
+        <br>
+        {%  if request.user.is_authenticated %}
+            <form action="" method="POST">
+            {%  csrf_token %}
+            <br>Comentario: <input type = "text" name = "comentario">
+            <br><input type="submit" name="action" value="comentar">
+            </form>
+        {% endif %}
+
+        <br>
+        <br>
+        {% for comentario in lista_comentarios %}
+            <p><b>Autor</b>: {{ comentario.autor }} <b>({{ comentario.fecha }}):</b></p>
+            <p><b>Comentario</b>: {{ comentario.comentario }}</p> <br>
+        {% endfor %}
+        <br>
+    <br>
+    <br>
 
 
 

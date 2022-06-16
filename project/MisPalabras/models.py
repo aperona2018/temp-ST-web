@@ -12,5 +12,7 @@ class Palabra(models.Model):
 
 class Comentario(models.Model):
     comentario = models.TextField(max_length=50)
-    palabra = models.ForeignKey('Palabra', on_delete=models.CASCADE)
+    palabra = models.ForeignKey(Palabra, on_delete=models.CASCADE)
     autor = models.CharField(max_length=16)
+    fecha = models.DateTimeField()
+
