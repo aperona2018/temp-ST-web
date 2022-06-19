@@ -15,7 +15,7 @@
     {% block titulo %}
         <div class="titulo">
             {%  if añadida %}
-                <b>{{ palabra }}</b> ({{ votos }} votos)
+                <b>{{ palabra }}</b>
             {% else %}
                 <b>{{ palabra }}</b>
             {% endif %}
@@ -31,44 +31,56 @@
         <br>
         <br>
 
+        <div class="imagen">
+            {%  if tiene_imagen %}
+                <img src="{{ imagen }}">
+            {%  else %}
+                La palabra no tiene imagen
+            {%  endif %}
+        </div>
+
+
         {%  if añadida %}
             Palabra añadida.
+            <b>({{ votos }} votos)</b>
             {%  if request.user.is_authenticated %}
                 <form method="POST">
-                        {%  csrf_token %}
-                        Palabra: <input type="text" name="palabra" value="{{ palabra }}"> <br>
-                        <input type="submit" name="action" value="votar">
+                    {%  csrf_token %}
+                    <input type="submit" name="action" value="votar palabra">
                 </form>
+
+                 <br>
+                <div class="comentario">
+                    <form action="" method="POST">
+                        {%  csrf_token %}
+                        <br>Comentario: <input type = "text" name = "comentario">
+                        <br><input type="submit" name="action" value="comentar">
+                    </form>
+                </div>
             {% endif %}
         {%  else %}
             {%  if request.user.is_authenticated %}
                 <form method="POST">
                     {%  csrf_token %}
-                    Edita y añade la palabra: <br>
-                    Palabra: <input type="text" name="palabra" value="{{ palabra }}"> <br>
-                    Definición: <input type="text" name="palabra" value="{{ definicion }}"> <br>
-                    <input type="submit" name="action" value="añadir">
+                    <input type="submit" name="action" value="añadir palabra">
                 </form>
 
             {% else %}
                 Necesitas loguearte para añadir esta palabra.
             {%  endif %}
+
         {% endif %}
 
-        <br>
-        {%  if request.user.is_authenticated %}
-            <form action="" method="POST">
-            {%  csrf_token %}
-            <br>Comentario: <input type = "text" name = "comentario">
-            <br><input type="submit" name="action" value="comentar">
-            </form>
-        {% endif %}
+
 
         <br>
         <br>
+        <h2 style="color:white; margin-left:800px; font-size: large; font-family: Calibri "> Comentarios: </h2>
         {% for comentario in lista_comentarios %}
-            <p><b>Autor</b>: {{ comentario.autor }} <b>({{ comentario.fecha }}):</b></p>
-            <p><b>Comentario</b>: {{ comentario.comentario }}</p> <br>
+            <div class="comentario">
+                <p><b>Autor</b>: {{ comentario.autor }} <b>({{ comentario.fecha }}):</b></p>
+                <p><b>Comentario</b>: {{ comentario.comentario }}</p> <br>
+            </div>
         {% endfor %}
         <br>
     <br>
@@ -88,7 +100,7 @@
                 <a href='/MisPalabras/MiPagina'><p>~ Mi página </p> </a> <br>
             {%  endif %}
             <p>~ XML </p> <br>
-            <p>~ JSON </p>
+            <a href='/MisPalabras/json'><p>~ JSON </p> </a> <br>
         </div>
 
     {%  endblock %}

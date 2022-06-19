@@ -1,0 +1,81 @@
+{
+ 	 'pepe'{ 
+	 	 'autor':admin 
+	 	 'definicion': Pepe es un nombre en español Es un hipocorístico del nombre propio masculino José
+Podría tratarse de una forma reducida de Josepe, antigua versión del nombre en español, análoga a las reducciones de tantos otros hipocorísticos[1]​ en español y otras lenguas romances 
+	 	 'votos': 1}
+
+ 	 'pato'{ 
+	 	 'autor':admin 
+	 	 'definicion': Pato es el nombre común para ciertas aves de la familia Anatidae, principalmente de la subfamilia Anatinae y dentro de ella del género Anas No son un grupo monofilético, ya que no se incluyen los cisnes ni los gansos La mayoría de las razas descienden del ánade real (Anas platyrhynchos), que fue domesticado en el sur de China Son una fuente de alimentación particularmente importante en las zonas rurales de Asia, en especial en el Asia sudoriental 
+	 	 'votos': 3}
+
+ 	 'paella'{ 
+	 	 'autor':admin 
+	 	 'definicion': La paella,[1]​ o también arroz a la paella,[2]​ (del valenciano paella, que significa sartén y se refiere al recipiente con el que se hace la receta y que le da nombre, y este a su vez del latín patella)[3]​ es una receta de cocina con base de arroz, con origen en la actual Comunidad Valenciana (España), hoy en día muy popular en toda España y servida en restaurantes de todo el mundo [4]​ En esta receta, el arroz se cocina junto a otros alimentos en una sartén, generalmente ancha y con asas 
+	 	 'votos': 2}
+
+ 	 'playa'{ 
+	 	 'autor':admin 
+	 	 'definicion': Una playa es un accidente geográfico junto a una masa de agua que consta de partículas sueltas Las partículas que componen una playa suelen estar hechas de roca, como arena, grava, guijarros, etc, o de fuentes biológicas, como conchas de moluscos o algas coralinas Los sedimentos se depositan en diferentes densidades y estructuras, dependiendo de la acción del oleaje local y el clima, creando diferentes texturas, colores y gradientes o capas de material 
+	 	 'votos': 5}
+
+ 	 'calor'{ 
+	 	 'autor':admin 
+	 	 'definicion': Se denomina calor a la energía en tránsito que se reconoce solo cuando se cruza la frontera de un sistema termodinámico[1]​ Una vez dentro del sistema, o en los alrededores, si la transferencia es de adentro hacia afuera, el calor transferido se vuelve parte de la energía interna del sistema o de los alrededores, según su caso El término calor, por tanto, se debe entender como transferencia de calor y solo ocurre cuando hay diferencia de temperatura y en dirección de mayor a menor 
+	 	 'votos': 0}
+
+ 	 'flor'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': La flor es la estructura reproductiva característica de las plantas llamadas espermatofitas o fanerógamas La función de una flor es producir semillas a través de la reproducción sexual Para las plantas, las semillas son la próxima generación y sirven como el principal medio a través del cual las especies se perpetúan y se propagan 
+Pero la organización interna de la flor es muy diferente en los dos principales grupos de espermatofitas: las gimnospermas vivientes y las angiospermas 
+	 	 'votos': 1}
+
+ 	 'universidad'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': Una universidad es una institución académica de enseñanza superior e investigación que otorga títulos académicos en diferentes disciplinas Se puede ubicar en uno o varios lugares llamados campus[1]​ 
+La universidad moderna tiene su origen en las universidades creadas por monjes cristianos de los siglos XII y XIII, las cuales son un desarrollo de las escuelas catedralicias y escuelas monásticas 
+	 	 'votos': 0}
+
+ 	 'camisa'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': La camisa o blusa es una prenda de vestir tanto formal como informal de tela que cubre el torso y brazos, usualmente tiene mangas, cuello y botones en el frente El término blusa se refiere a la camisa utilizada por mujeres, niños y también cuando se utiliza en distintas labores por hombres y mujeres 
+	 	 'votos': 0}
+
+ 	 'Betis'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': El término Betis puede referirse a:
+
+El nombre romano del río Guadalquivir
+El Real Betis Balompié, equipo de fútbol de España
+El Betis Club de Fútbol, equipo de fútbol de Valladolid (España)
+Betis (Tarifa), caserío del municipio español de Tarifa
+Las Cordilleras Béticas, sistema montañoso en el sur de la Península ibérica 
+	 	 'votos': 2}
+
+ 	 'pelota'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': Una pelota o un balón es un objeto utilizado en deportes de pelota y otros juegos Las pelotas normalmente son esféricas, pero pueden ser ovaladas como las de rugby y de fútbol americano Las hay elásticas y con diferentes pesos y medidas, como las de baloncesto y rugby, que se inflan con aire Otras son rígidas y pesadas, como las de golf y hockey sobre césped 
+	 	 'votos': 0}
+
+ 	 'karate'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': El karate o kárate[1]​ (del japonés 空手, karate; literalmente, «mano vacía») es un arte marcial tradicional basada en algunos estilos de las artes marciales chinas (wushu), y en menor medida en otras disciplinas provenientes del sureste asiático proveniente de Okinawa (Japón) El nombre japonés se compone de las palabras 空 (kara, «vacío») y 手 (te, «mano») A la persona que lo practica se la llama karateca 
+	 	 'votos': 0}
+
+ 	 'lugar'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': Lugar, en geografía, hace referencia a una aglomeración secundaria de un municipio menor que una villa y mayor que una aldea, según la cuarta acepción del Diccionario de la lengua española, editado por la Real Academia Española; por ejemplo, Don Quijote vivía en un "lugar" 
+	 	 'votos': 0}
+
+ 	 'portero'{ 
+	 	 'autor':UserTest 
+	 	 'definicion': Portero puede hacer referencia a:
+
+El portero de edificio, persona que vigila la puerta de un edificio o comunidad de propietarios y se encarga del cuidado y mantenimiento
+El portero (o guardameta), jugador que defiende la portería o arco en algunos deportes
+El portero (o guardameta), jugador de fútbol designado que se encarga directamente de evitar que el equipo rival marque un gol, defendiendo la portería
+El portero (o guardameta), jugador de balonmano que defiende la portería 
+	 	 'votos': 0}
+}
+?format=json

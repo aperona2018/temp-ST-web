@@ -67,6 +67,17 @@
     text-align: justify-all;
 }
 
+.comentario{
+    left: 40px;
+    border: 5px solid saddlebrown;
+    background-color: white;
+    margin-left: 750px;
+    margin-bottom: 10px;
+    text-align: justify-all;
+    width: 300px;
+    height: auto;
+}
+
 .cajaIndex{
     position: relative;
     border-radius: 20px;
@@ -75,11 +86,13 @@
     margin: 10px;
     height: auto;
     width: auto;
+    margin-left: 40px;
 }
+
 
 h1{
     font-family: Arial;
-    font-size: medium;
+    font-size: large;
 }
 
 h2{

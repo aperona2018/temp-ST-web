@@ -24,22 +24,29 @@
             <a href='/MisPalabras/'><p>~ Inicio </p> </a> <br>
             <a href='/MisPalabras/ayuda'><p>~ Ayuda </p> </a> <br>
             <p>~ XML </p> <br>
-            <p>~ JSON </p>
+            <a href='/MisPalabras/json'><p>~ JSON </p> </a> <br>
         </div>
 
     {%  endblock %}
 
     {%  block contenido %}
-        Palabras añadidas por {{ user }}: <br>
-        {%  for palabra in palabras_añadidas %}
-            {{  palabra.nombrePalabra }} --> {{ palabra.votos }} votos <br>
-        {% endfor %}
-        <br>
+        <div class="cajaPals">
+            <br>
+            <p><b style="color:blue">Palabras añadidas por {{ user }}: </b> </p> <br>
+            {%  for palabra in palabras_añadidas %}
+                <a href='/MisPalabras/{{ palabra.nombrePalabra }}'><p>~ {{  palabra.nombrePalabra }}</a> --> {{ palabra.votos }} votos </p> <br>
+            {% endfor %}
+            <br>
+        </div>
 
-        Comentarios puestos por {{ user }}: <br>
-        {% for comentario in comentarios_puestos %}
-            {{ comentario.fecha }} --> {{ comentario.comentario }} <br>
-        {%  endfor %}
+
+        <div class="cajaPals" style="width: auto">
+            <br>
+            <p><b style="color: blue">Comentarios puestos por {{ user }}: </b></p><br>
+            {% for comentario in comentarios_puestos %}
+                <p>~ Escrito en <a href='/MisPalabras/{{ comentario.palabra.nombrePalabra}}'>{{ comentario.palabra.nombrePalabra}}</a> ({{ comentario.fecha }}) --> <b>{{ comentario.comentario }}</b> <br> </p> <br>
+            {%  endfor %}
+        </div>
 
     {% endblock %}
 

@@ -1,0 +1,49 @@
+{% extends 'MisPalabras/schema.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+</head>
+<body>
+
+{%  block titulo %}
+    <div class="titulo">
+        JSON
+    </div>
+{%  endblock %}
+
+{%  block contenido %}
+    <div class="">
+        &nbsp;{ <br>
+            {%  for palabra in lista_palabras %}
+                &nbsp;&nbsp;&nbsp;&nbsp;{{ palabra.nombrePalabra }} { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"autor": {{ palabra.autor }}, <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"definicion": {{ palabra.definicion }}, <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"votos": {{ palabra.votos }} } <br>
+            {% endfor %}
+        &nbsp;}?format=json
+    </div>
+{%  endblock %}
+
+{% block barraOpciones %}
+
+        <div class="cajaOpts">
+            <h2 style="color: blue">Opciones:</h2> <br>
+            <a href='/MisPalabras/'><p>~ Inicio </p> </a> <br>
+            <a href='/MisPalabras/ayuda'><p>~ Ayuda </p> </a> <br>
+            {%  if request.user.is_authenticated %}
+                <a href='/MisPalabras/MiPagina'><p>~ Mi página </p> </a> <br>
+            {%  endif %}
+            <p>~ XML </p> <br>
+        </div>
+
+    {%  endblock %}
+
+</body>
+</html>
