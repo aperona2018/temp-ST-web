@@ -1,6 +1,5 @@
 import datetime
 import json
-import os
 import random
 import urllib.request
 from time import timezone
@@ -15,7 +14,7 @@ from django.shortcuts import redirect
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import Palabra, Comentario
+from .models import Palabra, Comentario, Voto
 
 
 
@@ -31,11 +30,6 @@ def conseguirValoresPalabras():
         palabraRandom = "No hay palabras."
 
     return lista_palabras, num_palabras, palabraRandom
-
-def findfile(name, path):
-    for dirpath, dirname, filename in os.walk(path):
-        if name in filename:
-            return os.path.join(dirpath, name)
 
 
 def crearListaMasVotadas():
@@ -159,6 +153,8 @@ def get_palabra(request, pal):
             for palabra in lista_palabras:
                 if pal == palabra.nombrePalabra:
                     print("traza palabra: " + pal)
+                    voto = Voto(palabra=palabra, autor=request.user)
+                    voto.save()
                     palabra.votos += 1
                     palabra.save()
 
@@ -217,10 +213,21 @@ def get_palabra(request, pal):
 
     template = loader.get_template('MisPalabras/palabra.html')
 
+    palabra_votada = False
+    for palabra in lista_palabras:
+        if (palabra.nombrePalabra == pal):
+            for voto in Voto.objects.all():
+                if (voto.palabra == palabra) and (voto.autor == request.user.get_username()):
+                    print("Ya votada")
+                    palabra_votada = True
+
+
+    print("Ya votada:", palabra_votada)
+
     context = {'lista_palabras': lista_palabras, 'user': request.user.username, 'num_palabras': num_palabras,
                'palabraRandom': palabraRandom, 'palabra': pal, 'definicion': definicion, 'imagen': image,
                'añadida': añadida, "votos": votos, 'lista_votadas': lista_mas_votadas , 'lista_comentarios': lista_coms,
-               'imagen': image, 'tiene_imagen': tiene_imagen}
+               'imagen': image, 'tiene_imagen': tiene_imagen, 'palabra_votada': palabra_votada}
 
     return HttpResponse(template.render(context, request))
 

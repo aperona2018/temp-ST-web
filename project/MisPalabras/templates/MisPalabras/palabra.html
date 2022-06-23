@@ -44,10 +44,14 @@
             Palabra añadida.
             <b>({{ votos }} votos)</b>
             {%  if request.user.is_authenticated %}
-                <form method="POST">
-                    {%  csrf_token %}
-                    <input type="submit" name="action" value="votar palabra">
-                </form>
+                {% if palabra_votada %}
+                    <br> <p style="color:darkred">Palabra ya votada.</p>
+                {% else %}
+                    <form method="POST">
+                        {%  csrf_token %}
+                        <input type="submit" name="action" value="votar palabra">
+                    </form>
+                {% endif %}
 
                  <br>
                 <div class="comentario">

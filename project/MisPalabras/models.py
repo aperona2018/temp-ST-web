@@ -16,3 +16,8 @@ class Comentario(models.Model):
     autor = models.CharField(max_length=16)
     fecha = models.DateTimeField()
 
+
+class Voto(models.Model):
+    palabra = models.ForeignKey(Palabra, on_delete=models.CASCADE)
+    autor = models.CharField(max_length=16)
+
