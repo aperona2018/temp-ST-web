@@ -1,67 +1,7 @@
 {
- 	 'bellota'{ 
-	 	 'autor':admin 
-	 	 'definicion': La bellota (del árabe ballūta, encina) o lande[1]​ es un fruto característico de las especies del género Quercus (fam Fagaceae)
-Dentro de este género, hay numerosas especies arbóreas que dan bellotas como el roble, la encina, el alcornoque, el quejigo y el melojo Esos frutos son los preferidos por las ardillas 
-	 	 'votos': 1}
-
- 	 'pelota'{ 
-	 	 'autor':admin 
-	 	 'definicion': Una pelota o un balón es un objeto utilizado en deportes de pelota y otros juegos Las pelotas normalmente son esféricas, pero pueden ser ovaladas como las de rugby y de fútbol americano Las hay elásticas y con diferentes pesos y medidas, como las de baloncesto y rugby, que se inflan con aire Otras son rígidas y pesadas, como las de golf y hockey sobre césped 
-	 	 'votos': 1}
-
- 	 'universidad'{ 
-	 	 'autor':admin 
-	 	 'definicion': Una universidad es una institución académica de enseñanza superior e investigación que otorga títulos académicos en diferentes disciplinas Se puede ubicar en uno o varios lugares llamados campus[1]​ 
-La universidad moderna tiene su origen en las universidades creadas por monjes cristianos de los siglos XII y XIII, las cuales son un desarrollo de las escuelas catedralicias y escuelas monásticas 
-	 	 'votos': 1}
-
- 	 'paella'{ 
-	 	 'autor':admin 
-	 	 'definicion': La paella,[1]​ o también arroz a la paella,[2]​ (del valenciano paella, que significa 'sartén' y se refiere al recipiente con el que se hace la receta y que le da nombre, y este a su vez del latín patella)[3]​ es una receta de cocina con base de arroz, con origen en la actual Comunidad Valenciana, hoy en día muy popular en toda España y servida en restaurantes de todo el mundo[4]​ En esta receta, el arroz se cocina junto a otros alimentos en una sartén, generalmente ancha y con asas 
-	 	 'votos': 2}
-
- 	 'pepe'{ 
-	 	 'autor':UserTest 
-	 	 'definicion': Pepe es un nombre en español Es un hipocorístico del nombre propio masculino José
-Podría tratarse de una forma reducida de Josepe, antigua versión del nombre en español, análoga a las reducciones de tantos otros hipocorísticos[1]​ en español y otras lenguas romances 
-	 	 'votos': 1}
-
- 	 'playa'{ 
-	 	 'autor':UserTest 
-	 	 'definicion': Una playa es un accidente geográfico junto a una masa de agua que consta de partículas sueltas Las partículas que componen una playa suelen estar hechas de roca, como arena, grava, guijarros, etc, o de fuentes biológicas, como conchas de moluscos o algas coralinas Los sedimentos se depositan en diferentes densidades y estructuras, dependiendo de la acción del oleaje local y el clima, creando diferentes texturas, colores y gradientes o capas de material 
-	 	 'votos': 1}
-
- 	 'calor'{ 
-	 	 'autor':UserTest 
-	 	 'definicion': Se denomina calor a la energía en tránsito que se reconoce solo cuando se cruza la frontera de un sistema termodinámico[1]​ Una vez dentro del sistema, o en los alrededores, si la transferencia es de adentro hacia afuera, el calor transferido se vuelve parte de la energía interna del sistema o de los alrededores, según su caso El término calor, por tanto, se debe entender como transferencia de calor y solo ocurre cuando hay diferencia de temperatura y en dirección de mayor a menor 
-	 	 'votos': 0}
-
- 	 'suerte'{ 
-	 	 'autor':UserTest 
-	 	 'definicion': La suerte puede ser definida como el resultado positivo o negativo de un suceso poco probable Hay por lo menos dos formas a los que se puede referir cuando se utiliza el término, en los que varían desde percibir suerte como una cuestión del azar, hasta atribuir a explicaciones de fe o superstición, como la organización sobrenatural de los sucesos afortunados y desafortunados 
-	 	 'votos': 1}
-
  	 'silla'{ 
-	 	 'autor':UserTest 
-	 	 'definicion': La silla (del latín sella) es un mueble que suele tener un respaldo, generalmente cuenta con tres o cuatro apoyos y su finalidad es la de servir de asiento a una persona[1]​ Las sillas pueden estar elaboradas con diferentes materiales: madera, hierro, forja, plástico o una combinación de varios de ellos
-Según su diseño, las sillas pueden ser clásicas, rústicas, modernas, de oficina, etc Las que son anchas, con respaldo algo alto, con brazos y balancín se denominan sillones 
-	 	 'votos': 0}
-
- 	 'escuela'{ 
-	 	 'autor':UserTest 
-	 	 'definicion': Escuela es el nombre genérico que recibe cualquier centro docente, centro de enseñanza, centro educativo o institución educativa; es decir, toda institución que imparta educación o enseñanza[1]​[2]​
-Suele designar específicamente a los centros de enseñanza primaria, enseñanza secundaria o a las escuelas universitarias que, junto con las facultades, forman las universidades 
-	 	 'votos': 1}
-
- 	 'pantera'{ 
-	 	 'autor':UserTest 
-	 	 'definicion': ←
-Pantera (del griego: παν, "todo/a" - θηρα, "fiera") es un término genérico para designar a varios félidos de gran tamaño:
-
-Panthera, género que agrupa a todos los félidos que son capaces de rugir
-Pantera negra Leopardos (Panthera pardus), jaguares (Panthera onca) y pumas (Puma concolor) de color negro (con melanismo);
-Pantera blanca 
+	 	 'autor':pepito 
+	 	 'definicion': definicion de silla 
 	 	 'votos': 0}
 }
 ?format=json

@@ -5,6 +5,7 @@ from django.db import models
 
 class Palabra(models.Model):
     nombrePalabra = models.TextField()
+    linkImagen = models.TextField(default='imagen')
     definicion = models.TextField(max_length=50)
     votos = models.IntegerField()
     autor = models.CharField(max_length=16)

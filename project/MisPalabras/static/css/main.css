@@ -79,7 +79,6 @@
 }
 
 .cajaIndex{
-    position: relative;
     border-radius: 20px;
     border: 5px solid saddlebrown;
     background-color: white;
@@ -87,6 +86,12 @@
     height: auto;
     width: auto;
     margin-left: 40px;
+}
+
+.cajaAyuda{
+    border: 5px solid saddlebrown;
+    background-color: white;
+    margin: 10px;
 }
 
 

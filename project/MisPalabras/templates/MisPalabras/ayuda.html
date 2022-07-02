@@ -24,10 +24,45 @@
             {%  if request.user.is_authenticated %}
                 <a href='/MisPalabras/MiPagina'><p>~ Mi página </p> </a> <br>
             {%  endif %}
-            <p>~ XML </p> <br>
+            <a href='/MisPalabras/xml'><p>~ XML </p> </a> <br>
             <a href='/MisPalabras/json'><p>~ JSON </p> </a> <br>
         </div>
 
     {%  endblock %}
+
+    {%  block contenido %}
+        <div class="cajaAyuda">
+            Página <b>MisPalabras</b> creada por <b> Antonio Perona Martínez </b> -> a.perona.2018 <br>
+
+            <h1><b> Especificaciones del proyecto:</b> </h1> <br>
+                <p><b> ~ Autor: </b> Antonio Perona Martínez </p>
+                <p><b> ~ Versión de django: </b> 3.1.7 </p>
+                <p><b> ~ Versión de python: </b> 3.8.10 </p>
+
+            <h1><b> Funcionalidad del proyecto:</b> </h1> <br>
+                Cualquier usuario, autenticado o no, puede, en esta página web, buscar cualquier palabra y así conseguir una breve definición de esta en wikipedia, si la tuviera, y su pertinente imagen en wikipedia, si la tuviera. <br>
+                Asimismo, solo los usuarios autenticados podrán tanto almacenar las palabras buscadas en la web como comentar en estas y votar. Estas palabras almacenadas y comentarios creados por un usuario se podrán observar en la página del usuario pertinente. <br>
+                También, todo usuario, autenticado o no, podrá solicitar la información de las palabras almacenadas en la página web tanto en formato XML como en formato JSON. <br>
+
+
+            <h1><b> Arquitectura del proyecto:</b> </h1> <br>
+            <p>Esta página web se compone de diversas partes: </p><br>
+                <p><b> ~ Esquema principal: </b> Todas las partes contendrán un banner, una caja para loguearse o cerrar sesión, una barra de opciones, un buscador de palabras con las 10 palabras más votadas y un pie de página con información sobre el número de palabras almacenadas.</p>
+                <p><b> ~ Inicio: </b> Lista de las palabras almacenadas paginadas de 5 en 5 y ordenados de más nueva a más antigua con su pertinente información</p>
+                <p><b> ~ Página de Ayuda:</b> Información con la pertinente autoría, funcionalidad y documentación del proyecto.</p>
+                <p><b> ~ Página de Usuario:</b> Información con las palabras almacenadas por dicho usuario, así como los comentarios escritos por este</p>
+                <p><b> ~ XML:</b> Información sobre las palabras almacenadas en la página con formato xml</p>
+                <p><b> ~ JSON:</b> Información sobre las palabras almacenadas en la página con formato json</p>
+                <p><b> ~ Página de palabra: </b> Información sobre la palabra, como su definición o imagen en wikipedia, si las tuvieran y, en caso de estar almacenada, sus votos y comentarios</p>
+                <p><b> ~ Error: </b> A mostrar en caso de error en la página web</p>
+
+            <h1><b> Documentación del proyecto:</b> </h1> <br>
+                <p><b> ~ Documentación de django -> </b> <a href='https://docs.djangoproject.com/es/4.0/'> django </a></p>
+                <p><b> ~ Documentación de python -> </b> <a href='https://docs.python.org/es/3.8/tutorial/index.html'> python </a></p>
+                <p><b> ~ Otra documentación -> </b> apuntes proporcionados en la asignatura</p>
+
+        </div>
+    {% endblock %}
+
 </body>
 </html>

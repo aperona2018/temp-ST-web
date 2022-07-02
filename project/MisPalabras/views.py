@@ -137,7 +137,15 @@ def get_palabra(request, pal):
             if len(definicion) == 0:
                 definicion = "No hay definición en la wikipedia."
 
+            image = parsearWiki(pal)[1]
+
+            tiene_imagen = image != "No hay"
+
             palabra = Palabra(nombrePalabra=pal, definicion=definicion, autor=request.user, votos=0)
+
+            if tiene_imagen:
+                palabra.linkImagen = image
+
             palabra.save()
 
         elif action == 'Buscar palabra':
@@ -152,7 +160,6 @@ def get_palabra(request, pal):
         elif action == 'votar palabra':
             for palabra in lista_palabras:
                 if pal == palabra.nombrePalabra:
-                    print("traza palabra: " + pal)
                     voto = Voto(palabra=palabra, autor=request.user)
                     voto.save()
                     palabra.votos += 1
@@ -177,7 +184,6 @@ def get_palabra(request, pal):
             logout(request)
 
         elif action == "comentar":
-            print("Comentar")
             palabra = Palabra.objects.get(nombrePalabra=pal)
             comentario = request.POST['comentario']
             autor = request.user.get_username()
@@ -186,12 +192,10 @@ def get_palabra(request, pal):
             com.save()
 
     votos = 0
-    for palabra in lista_palabras:  #-- TODO: Hacer una función con esto
+    for palabra in lista_palabras:
         if pal == palabra.nombrePalabra:
-            print("traza palabra: " + pal)
             votos = palabra.votos
             lista_coms = palabra.comentario_set.all()
-
 
     añadida = palabraAñadida(pal)
     try:
@@ -218,11 +222,8 @@ def get_palabra(request, pal):
         if (palabra.nombrePalabra == pal):
             for voto in Voto.objects.all():
                 if (voto.palabra == palabra) and (voto.autor == request.user.get_username()):
-                    print("Ya votada")
                     palabra_votada = True
 
-
-    print("Ya votada:", palabra_votada)
 
     context = {'lista_palabras': lista_palabras, 'user': request.user.username, 'num_palabras': num_palabras,
                'palabraRandom': palabraRandom, 'palabra': pal, 'definicion': definicion, 'imagen': image,
@@ -312,7 +313,6 @@ def get_usersPag(request):
 
     palabras_añadidas = []
     for palabra in lista_palabras:
-        print("autor: " + palabra.autor + " user: " + request.user.get_username())
         if palabra.autor == request.user.get_username():
             palabras_añadidas.append(palabra)
 
@@ -343,9 +343,6 @@ def get_error(request):
     return HttpResponse(template.render(context, request))
 
 
-def get_xml(request):
-    pass
-
 def get_json(request):
     json_str = "{"
     for palabra in Palabra.objects.all():
@@ -366,6 +363,17 @@ def get_json(request):
     lista_mas_votadas = crearListaMasVotadas()
 
     template = loader.get_template('MisPalabras/json.html')
+    context = {'lista_palabras': lista_palabras, 'user': request.user.username, 'num_palabras': num_palabras,
+               'palabraRandom': palabraRandom, 'lista_votadas': lista_mas_votadas}
+
+    return HttpResponse(template.render(context, request))
+
+
+def get_xml(request):
+    lista_palabras, num_palabras, palabraRandom = conseguirValoresPalabras()
+    lista_mas_votadas = crearListaMasVotadas()
+
+    template = loader.get_template('MisPalabras/xml.html')
     context = {'lista_palabras': lista_palabras, 'user': request.user.username, 'num_palabras': num_palabras,
                'palabraRandom': palabraRandom, 'lista_votadas': lista_mas_votadas}
 
@@ -412,10 +420,8 @@ def parsearWiki(palabra):
     try:
         image = jsonStream['query']["pages"][data[1]]["thumbnail"]["source"]
     except KeyError:
-        print("No hay imagen")
         image = "No hay"
     finally:
-        print('imagen',image)
 
         return texto[0:500], image
 
